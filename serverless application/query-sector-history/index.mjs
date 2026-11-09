@@ -8,7 +8,7 @@ const TABLE_NAME = process.env.TABLE_NAME || "SectorQuotes";
 
 export const handler = async (event) => {
     // Extract query parameters from API Gateway (e.g., ?symbol=XLK&startDate=2026-01-01&endDate=2026-11-08)
-    const queryParams = event.queryStringParameters || {};
+    const queryParams = event || {};
     const { symbol, startDate, endDate } = queryParams;
 
     if (!symbol) {
